@@ -1,0 +1,33 @@
+{
+  "name": "group",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "comment": "##### css-tokens.js will be generated #####",
+    "build": "postcss ./src/index.css  --o ./dist/group.css"
+  },
+  "keywords": [
+    "CSS"
+  ],
+  "author": "pol moneys",
+  "devDependencies": {
+    "cssnano": "^5.1.8",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-export-vars": "^0.2.0",
+    "postcss-import": "^14.1.0",
+    "postcss-preset-env": "^7.6.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/tokens.js",
+  "module": "./dist/tokens.js",
+  "exports": {
+    ".": {
+      "import": "./dist/tokens.js",
+      "require": "./dist/tokens.js"
+    }
+  }
+}

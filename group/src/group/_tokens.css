@@ -1,0 +1,65 @@
+@custom-media --portrait (orientation: portrait);
+@custom-media --landscape (orientation: landscape);
+
+@custom-media --OSdark (prefers-color-scheme: dark);
+@custom-media --OSlight (prefers-color-scheme: light);
+
+:where(html) {
+  --transparent: transparent;
+  --zero: 0;
+  --gap-1: 0.4em;
+  --gap-2: 0.6em;
+  --gap-3: 0.8em;
+  --gap-4: 1em;
+  --gap-5: 1.2em;
+  --z-low: 9;
+  --z-high: 99;
+  --ratio-square: 1;
+  --ratio-portrait: 9/16;
+  --ratio-landscape: 16/9;
+  --ratio-ultrawide: 18/5;
+
+  --group-content-whitespace: var(--gap-3);
+  --group-actions-whitespace: var(--gap-1) var(--gap-3);
+  --group-min-height: 20vh;
+  --white: #fff;
+  --black: #232323;
+  --accent: #09f;
+  --accent-error: #f09;
+  --group-bg: var(--white);
+  --group-content-color: #6b7280;
+  --group-actions-bg: #f3f4f6;
+  --group-actions-color: #9ca3af;
+  --group-odd-bg: rgba(0, 0, 0, 0.2);
+  --group-selection-bg: var(--white);
+  --group-selection-color: var(--accent);
+
+  --group-shadow-color: 220 3% 15%;
+  --group-shadow-strength: 1%;
+  --group-shadow: 0 3px 5px -2px hsl(var(--group-shadow-color) /
+          calc(var(--group-shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--group-shadow-color) /
+          calc(var(--group-shadow-strength) + 5%));
+
+  --group-border-width: 0.15em;
+  --group-border-color: #e5e7eb;
+  --group-border-radius: 0.4em;
+  --group-border: var(--group-border-width) solid var(--group-border-color);
+}
+
+:root {
+  color-scheme: light;
+  accent-color: var(--accent);
+  --background: var(--white);
+  --color: var(--black);
+}
+/* 
+@media (--OSdark) {
+  :root {
+    color-scheme: dark;
+    accent-color: var(--accent);
+    --background: var(--black);
+    --color: var(--white);
+    --group-shadow: none;
+  }
+} */

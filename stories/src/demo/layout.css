@@ -1,0 +1,41 @@
+body {
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 1.5em;
+  margin-bottom: var(--gap-3);
+}
+
+h1 strong {
+  text-transform: capitalize;
+}
+
+section > article {
+  margin-inline: max(0px, ((100% - 650px) / 2));
+  position: relative;
+  padding-bottom: 10vh;
+}
+
+aside {
+  padding-bottom: 10vh;
+}
+
+.fix-portrait-card-height {
+  margin-inline: max(0px, ((100% - 360px) / 2));
+}
+
+.ribbon {
+  width: 0;
+  height: 10em;
+  border-right: 50px solid blue;
+  border-left: 50px inset red;
+  border-bottom: 30px solid transparent;
+}

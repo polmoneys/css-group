@@ -1,0 +1,107 @@
+.list {
+  width: 100%;
+  height: max-content;
+  border: var(--group-border);
+  box-shadow: var(--group-shadow);
+  list-style: none;
+  --list-gap: var(--gap-2);
+  & > li {
+    display: grid;
+    gap: var(--list-gap);
+    grid-template-columns: 1fr;
+    padding: var(--group-actions-whitespace);
+
+    & div:not(.start, .end) {
+      min-width: 0;
+      display: grid;
+      gap: var(--list-gap);
+      overflow: hidden;
+      /* padding: 0 var(--list-gap); */
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      & > *:not(:first-child) {
+        font-size: 85%;
+        white-space: normal;
+        overflow: inherit;
+        text-overflow: inherit;
+      }
+    }
+    & > .start,
+    & > .end {
+      display: grid;
+      overflow: visible;
+      place-items: center;
+    }
+    & > .start {
+      margin-right: auto;
+      padding-right: 0;
+    }
+
+    & > .end {
+      margin-left: auto;
+      padding-left: 0;
+    }
+    &:not(:last-child) {
+      border-bottom: var(--group-border);
+    }
+
+    &.list\:divider {
+      margin-bottom: -0.5em !important;
+      margin-top: -0.5em !important;
+    }
+
+    /* &:nth-child(odd) {
+        background-color: var(--group-odd-bg);
+      } */
+  }
+}
+
+@supports not (selector(:has(*))) {
+  /* for now we markup some conditional class as fallback*/
+  .list {
+    & > li {
+      &.list-item-start-end {
+        grid-template-columns: 48px 1fr 48px;
+      }
+      &.list-item-start {
+        grid-template-columns: 48px 1fr;
+      }
+      &.list-item-end {
+        grid-template-columns: 1fr 48px;
+      }
+    }
+  }
+}
+
+@supports selector(:has(*)) {
+  .list {
+    & > li {
+      &:has(.start) {
+        grid-template-columns: 48px 1fr;
+      }
+      &:has(.end) {
+        grid-template-columns: 1fr 48px;
+      }
+      &:has(.start):has(.end) {
+        grid-template-columns: 48px 1fr 48px;
+      }
+      & > div:only-child,
+      &:has(.end) div:nth-child(1),
+      &:has(.start) div:nth-child(2) {
+        min-width: 0;
+        display: grid;
+        gap: var(--list-gap);
+        overflow: hidden;
+        /* padding: 0 var(--list-gap); */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        & > *:not(:first-child) {
+          font-size: 85%;
+          white-space: normal;
+          overflow: inherit;
+          text-overflow: inherit;
+        }
+      }
+    }
+  }
+}

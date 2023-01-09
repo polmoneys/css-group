@@ -1,0 +1,125 @@
+.page {
+  margin-inline: max(0px, ((100% - 64rem) / 2));
+}
+
+.center {
+  place-items: center;
+}
+
+.row,
+.col {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.col\:row {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (--landscape) {
+  .row\:landscape {
+    display: flex;
+  }
+  .col\:row {
+    flex-direction: row;
+  }
+  .align-items-center\:landscape {
+    align-items: center;
+  }
+}
+
+/* aka. intrinsic grid */
+.row\:col {
+  --min-content-width: 20rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  & > * {
+    flex: 1 1 var(--min-content-width);
+  }
+}
+
+/*
+    aka. intrinsic grid col-repeat clamps a minimal width so that children never go below it
+    while allowing them to grow and fill as max space as posible. 
+*/
+.grid,
+.grid\:md,
+.grid\:lg,
+.grid\:xl {
+  --item-grid-sm: 250px;
+  --item-grid-md: 440px;
+  --item-grid-lg: 690px;
+  --item-grid-xl: 860px;
+
+  --grid-item-width: var(--item-grid-sm);
+  width: 100%;
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--grid-item-width)), 1fr)
+  );
+
+  &.grid\:stretch {
+    align-items: stretch !important;
+  }
+  &.grid\:masonry {
+    grid-template-rows: masonry;
+    /* align-items: baseline;
+    grid-auto-flow: dense; */
+  }
+}
+.grid\:md {
+  --grid-item-width: var(--item-grid-md);
+}
+.grid\:lg {
+  --grid-item-width: var(--item-grid-lg);
+}
+.grid\:xl {
+  --grid-item-width: var(--item-grid-xl);
+}
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+.reorder\:top {
+  order: -1 !important;
+}
+
+.fit\:width {
+  width: fit-content;
+}
+.fit\:width\:min {
+  min-width: 0;
+}
+.fit\:width\:max {
+  width: max-content;
+}
+.fit\:height {
+  height: fit-content;
+}
+.fit\:height\:min {
+  min-height: 0;
+}
+@media (--landscape) {
+  .hide\:portrait {
+    display: none !important;
+  }
+}
+
+@media (--portrait) {
+  .reorder\:portrait {
+    order: -1 !important;
+  }
+  .hide\:landscape {
+    display: none !important;
+  }
+}

@@ -1,0 +1,96 @@
+.card {
+  position: relative;
+  word-break: break-word;
+  hyphens: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--group-bg);
+  box-shadow: var(--group-shadow);
+  border: var(--group-border);
+
+  /* Card body */
+  & div:first-of-type {
+    padding: var(--group-content-whitespace);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-3);
+  }
+
+  /* Card actions */
+  & div:last-of-type:not(:only-of-type) {
+    margin-top: auto;
+    padding: var(--group-content-whitespace);
+
+    & button + * {
+      margin-left: auto;
+    }
+  }
+
+  & picture,
+  & img {
+    width: 100%;
+  }
+  & img {
+    object-fit: cover;
+    border: 0;
+    border-style: none;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+  }
+
+  &::selection {
+    color: var(--group-selection-color);
+    background-color: var(--group-selection-bg);
+  }
+}
+
+@supports (aspect-ratio: 1) {
+  .card {
+    aspect-ratio: var(--ratio-square);
+  }
+  .card\:landscape {
+    aspect-ratio: var(--ratio-landscape);
+  }
+  .card\:portrait {
+    aspect-ratio: var(--ratio-portrait);
+  }
+  .card\:ultrawide {
+    aspect-ratio: var(--ratio-ultrawide);
+  }
+}
+
+@supports not (selector(:has(*))) {
+  .card {
+    & h2 + p {
+      margin-top: var(--gap-3);
+    }
+  }
+}
+
+@supports selector(:has(*)) {
+  .card {
+    & h2:has(+ p) {
+      margin-bottom: var(--gap-3);
+    }
+
+    /* Card with img */
+    &:has(img) div,
+    &:has(img) {
+      padding: var(--zero);
+    }
+
+    &:has(img) picture {
+      display: flex;
+      flex-grow: 1;
+      position: relative;
+      width: 100%;
+    }
+    &:has(img) picture + div {
+      padding: var(--group-content-whitespace);
+    }
+  }
+}

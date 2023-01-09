@@ -1,0 +1,10 @@
+{
+  "name": "css-group",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "group",
+      "stories"
+    ]
+  }
+}
