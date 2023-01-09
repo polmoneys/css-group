@@ -3,7 +3,7 @@
 
 Interfaces are made up of a wild combination of materials, how should we "group" them with CSS ?
 
-Check [demo](https://polmoneys.github.io/grace/).
+Check [demo](https://polmoneys.github.io/css-group/).
 
 
 ### Get started
