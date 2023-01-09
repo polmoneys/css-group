@@ -18,6 +18,10 @@ h1 strong {
   text-transform: capitalize;
 }
 
+main {
+  padding-top: var(--gap-3);
+}
+
 section > article {
   margin-inline: max(0px, ((100% - 650px) / 2));
   position: relative;
