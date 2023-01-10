@@ -3,13 +3,16 @@
 
 Interfaces are made up of a wild combination of materials, how should we "group" them with CSS ?
 
-Check [demo](https://polmoneys.github.io/css-group/).
+Check [interactive demo](https://polmoneys.github.io/css-group/) with **Card**, **Panel** and **List**.
+
+Cards for content, with aspect ratio, may or may not have media. 
+
+Panels hold interactive children. 
+
+Lists for...yeah. It may/may not have **start** and **end** slots. 
 
 
 ### Get started
-
-
-Cards for content, panels hold interactive children. Lists for...yeah.
 
 CSS utility classes as **foo:bar**.
 
