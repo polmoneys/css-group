@@ -14,12 +14,11 @@ Lists for...yeah. It may/may not have **start** and **end** slots.
 
 ### Get started
 
-CSS utility classes as **foo:bar**.
-
 ````html
 
 <!-- Card -->
 <article class="group card:landscape"  />
+
 <!-- Panel -->
 <article class="group panel"  />
 
@@ -29,7 +28,14 @@ Under **group** customize tokens and reset.
 
 Under **components** templates for cards, panels & lists. 
 
-Under **utils** all you need to control layout and spacing. 
+Under **utils** all you need to control layout and spacing. CSS utility classes as **foo:bar**.
+
+
+### Roadmap 
+
+- [ ] add dark theme ```color-scheme: dark;``` to **group/group/_tokens**
+
+
 
 ### Tooling
 
