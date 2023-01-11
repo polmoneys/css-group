@@ -33,7 +33,8 @@ Under **utils** all you need to control layout and spacing. CSS utility classes 
 
 ### Roadmap 
 
-- [ ] add dark theme ```color-scheme: dark;``` to **group/group/_tokens**
+- [ ] add dark theme ```color-scheme: dark;``` to **group/group/_tokens.css**
+- [ ] make demo of ```view``` to **group/components/_view.css**
 
 
 
