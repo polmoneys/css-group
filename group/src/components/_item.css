@@ -1,0 +1,67 @@
+.item {
+  --item-gap: var(--gap-1);
+  --item-slot-width: 48px;
+
+  width: 100%;
+  height: max-content;
+  display: grid;
+  gap: var(--item-gap);
+  grid-template-columns: 1fr;
+  padding: var(--group-actions-whitespace);
+  & > *:not(.start, .end) {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  & > .start,
+  & > .end {
+    display: grid;
+    overflow: visible;
+    place-items: center;
+  }
+  & > .start {
+    padding-right: 0;
+  }
+
+  & > .end {
+    padding-left: 0;
+  }
+}
+
+@supports not (selector(:has(*))) {
+  /* for now we markup some conditional class as fallback*/
+  .item {
+    &.item-start-end {
+      grid-template-columns: var(--item-slot-width) 1fr var(--item-slot-width);
+    }
+    &.item-start {
+      grid-template-columns: var(--item-slot-width) 1fr;
+    }
+    &.item-end {
+      grid-template-columns: 1fr var(--item-slot-width);
+    }
+  }
+}
+
+@supports selector(:has(*)) {
+  .item {
+    &:has(.start) {
+      grid-template-columns: var(--item-slot-width) 1fr;
+    }
+    &:has(.end) {
+      grid-template-columns: 1fr var(--item-slot-width);
+    }
+    &:has(.start):has(.end) {
+      grid-template-columns: var(--item-slot-width) 1fr var(--item-slot-width);
+    }
+    & > div:only-child,
+    &:has(.end) div:nth-child(1),
+    &:has(.start) div:nth-child(2) {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
