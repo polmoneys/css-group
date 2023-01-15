@@ -27,7 +27,7 @@ function HeadLine() {
 
 function ItemEmpty(start?: boolean, end?: boolean) {
   return html` <li
-    class="list-item${start ? "-start" : ""}${end ? "-end" : ""}"
+    class="item list:item${start ? ":start" : ""}${end ? ":end" : ""}"
   >
     ${start
       ? html`<div class="start">
@@ -57,14 +57,14 @@ function Item(position: number, divider?: boolean) {
 
   if (divider !== undefined)
     return html`
-      <li>
+      <li class="item">
         <div>
           <div class="list:divider">${Line(1, true)}</div>
         </div>
       </li>
     `;
 
-  return html` <li class="list-item-start-end">
+  return html` <li class="item list:item:start:end">
     ${html`<div class="start">
       ${Shape({
         vertices: 8,
