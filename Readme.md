@@ -5,14 +5,16 @@ Interfaces are made up of a wild combination of materials, how should we "group"
 
 Check [interactive demo](https://polmoneys.github.io/css-group/) with **Card**, **Panel** and **List**.
 
+
+### Get started
+
+
 Cards for content, with aspect ratio, may or may not have media. 
 
 Panels hold interactive children. 
 
-Lists for...yeah. It may/may not have **start** and **end** slots. 
+Lists for...yeah. It may/may-not have **start** and **end** slots. 
 
-
-### Get started
 
 ````html
 
@@ -28,13 +30,13 @@ Under **group** customize tokens and reset.
 
 Under **components** templates for cards, panels & lists. 
 
-Under **utils** all you need to control layout and spacing. CSS utility classes as **foo:bar**.
+Under **utils** all you need to control layout and spacing. CSS utility classes like **px:md**, **ml:auto**...
 
 
 ### Roadmap 
 
-- [ ] add dark theme ```color-scheme: dark;``` to **group/group/_tokens.css**
 - [ ] document & demo **view** and **item** group
+- [ ] add dark theme ```color-scheme: dark;``` to **group/group/_tokens.css**
 
 
 
