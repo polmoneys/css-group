@@ -13,6 +13,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    display: grid;
+    gap: var(--gap-2);
   }
   & > .start,
   & > .end {
@@ -32,13 +34,13 @@
 @supports not (selector(:has(*))) {
   /* for now we markup some conditional class as fallback*/
   .item {
-    &.item-start-end {
+    &.item\:start\:end {
       grid-template-columns: var(--item-slot-width) 1fr var(--item-slot-width);
     }
-    &.item-start {
+    &.item\:start {
       grid-template-columns: var(--item-slot-width) 1fr;
     }
-    &.item-end {
+    &.item\:end {
       grid-template-columns: 1fr var(--item-slot-width);
     }
   }
