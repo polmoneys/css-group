@@ -35,7 +35,7 @@ Under **utils** all you need to control layout and spacing. CSS utility classes 
 
 ### Roadmap 
 
-- [ ] document & demo **view** and **item** group
+- [ ] document & demo **view**, **item** and **bi** group
 - [ ] add dark theme ```color-scheme: dark;``` to **group/group/_tokens.css**
 
 
@@ -69,3 +69,10 @@ Under **utils** all you need to control layout and spacing. CSS utility classes 
 
 Erik Gunnar Asplund on **Swedish Grace**.
 
+
+### Feedback 
+
+
+[Twitter](https://twitter.com/polmoneys)
+
+[polmoneys.com](https://polmoneys.com)
