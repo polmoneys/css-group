@@ -4,6 +4,7 @@
 @import "utils/_layout";
 @import "utils/_spacing";
 
+@import "components/_bi";
 @import "components/_card";
 @import "components/_item";
 @import "components/_list";
